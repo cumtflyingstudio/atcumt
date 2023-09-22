@@ -1,30 +1,27 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="navi">
+    <div class="video">
+      <video src="@/assets/wallpaper.mp4" muted loop autoplay></video>
+    </div>
+    <TimeBox></TimeBox>
+    <Search></Search>
+    <TagsBox></TagsBox>
+    <UserBox></UserBox>
+  </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import Search from '@/components/Search.vue'
+import TimeBox from '@/components/TimeBox.vue'
+import TagsBox from '@/components/TagsBox.vue'
+import UserBox from '@/components/UserBox.vue'
+export default ({
 
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+  components: {
+    TagsBox,
+    Search,
+    TimeBox,
+    UserBox,
+  }
+})
+</script>

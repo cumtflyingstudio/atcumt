@@ -1,0 +1,397 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    /* background-image: url('@/assets/background/backgroundPic2.png'); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.timeBox {
+    font-size: 65px;
+    padding: 20px;
+    font-weight: bold;
+    caret-color: transparent;
+    opacity: 0;
+}
+
+.navi {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.searchBox {
+    background-color: #2f2f2f;
+    caret-color: transparent;
+    border-radius: 15px;
+    position: fixed;
+    z-index: 100;
+    width: 35vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    top: 79px;
+    opacity: 0.7;
+    flex-wrap: wrap;
+    transition: 0.5s;
+    min-width: 250px;
+}
+
+/* .searchBox:hover {
+    opacity: 1;
+} */
+
+
+.searchInput {
+    padding: 10px 5px 10px 5px;
+    height: 30px;
+    flex: 1;
+    margin-left: 5px;
+    border: 0;
+    outline: 0;
+    background-color: #2f2f2f;
+    caret-color: white;
+    color: white;
+    font-family: "San Francisco";
+    border-radius: 15px;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+/* .searchInput:focus {
+    opacity: 1;
+} */
+
+.searchEngine {
+    height: 35px;
+    width: 35px;
+    /* border: 1px black solid; */
+    border-radius: 10px;
+    margin-left: 5px;
+    background-color: #2f2f2f;
+    color: white;
+    outline: 0;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selected {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #2f2f2f;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease-in-out;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dropdown.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.option {
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    color: white;
+}
+
+.option:hover {
+    background-color: #45413a
+}
+
+.engines {
+    width: 20px;
+    height: 5px;
+}
+
+.suggestionsBox {
+    width: 35vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    top: 120px;
+    opacity: 0.7;
+    flex-wrap: wrap;
+    transition: 0.5s;
+}
+
+.suggestions {
+    height: 35px;
+    width: 861px;
+    border: 1px black solid;
+    border: 0;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: "San Francisco";
+    margin-left: 3px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+
+.suggestion {
+    font-family: "San Francisco";
+    font-size: 16px;
+}
+
+.suggestions:hover {
+    border-radius: 15px;
+    transition: 0.3s;
+    background-color: #45413a;
+}
+
+.tagsBox {
+    margin-top: 130px;
+    /* background-color: #2f2f2f; */
+    width: 70vw;
+    height: 35vh;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    border-radius: 25px;
+    caret-color: transparent;
+}
+
+@media (max-width: 1200px) {
+    .tagsBox {
+        grid-template-columns: repeat(5, 1fr);
+        /* 6列 */
+        grid-template-rows: repeat(3, 1fr);
+        /* 3行 */
+    }
+}
+
+@media (max-width: 800px) {
+    .tagsBox {
+        grid-template-columns: repeat(4, 1fr);
+        /* 6列 */
+        grid-template-rows: repeat(4, 1fr);
+        /* 3行 */
+    }
+}
+
+@media (max-width: 650px) {
+    .tagsBox {
+        grid-template-columns: repeat(3, 1fr);
+        /* 6列 */
+        grid-template-rows: repeat(6, 1fr);
+        /* 3行 */
+    }
+}
+
+.tagBox {
+
+    /* background-color: #212129;  */
+    border-radius: 5px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#mySvg {
+    background: url('@/assets/svg/search.svg');
+    background-repeat: none !important;
+    background-size: contain;
+    margin: 0 10px 0 5px;
+    height: 20px;
+    width: 20px;
+
+}
+
+.tagBox:hover {
+
+    cursor: pointer;
+}
+
+.ico {
+    width: 80px;
+    height: 50px;
+    background-repeat: no-repeat;
+    background: url('@/assets/ico/cumt.ico');
+    background-size: contain;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.engineIcon {
+    width: 20px;
+    height: 20px;
+
+}
+
+@keyframes move-up {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.tagIcon {
+    width: 40px;
+    height: 40px;
+}
+
+.tagIcon:hover {
+    animation: move-up 1s ease infinite;
+}
+
+.tagName {
+    font-size: 14px;
+}
+
+#addTag {
+    background-color: #2f2f2f;
+
+    opacity: 0.8;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#addTag::before {
+    content: "+";
+    color: white;
+    font-size: 24px;
+    transform: translateY(-2px);
+
+}
+
+.userBox {
+    position: fixed;
+    top: 130px;
+    left: 10px;
+    background-color: #2f2f2f;
+    height: 68vh;
+    width: 40px;
+    opacity: 0.7;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    caret-color: transparent;
+}
+
+.avatar {
+    height: 30px;
+    width: 30px;
+    margin-top: 5px;
+    background-color: #67f2b6;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ant-modal-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.ant-modal-content {
+    height: 55vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.ant-modal-body {
+    margin-bottom: 120px;
+}
+
+.login .ant-input {
+    width: 304px;
+}
+
+.loginTip {
+    margin-top: 15px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.add .ant-input {
+    /* margin-top: 20px; */
+    width: 473px;
+}
+
+.selectIcon {
+    margin-bottom: 45px;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    display: none;
+}
+
+/* 滚动槽 */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+    border-radius: inherit;
+    background-color: rgba(144, 147, 153, 0.3);
+    -webkit-transition: 0.3s background-color;
+    transition: 0.3s background-color;
+    /* display: none; */
+}
