@@ -10,8 +10,6 @@
                 </div>
             </div>
         </div>
-
-
         <input v-model="content" class="searchInput" type="text" @keydown.enter="searchContent" @input="suggest"
             placeholder="请输入搜索内容" @focus="showSug" @blur="hidSug">
         <div class="suggestionsBox" :class="{ open: showSugs }">
@@ -94,7 +92,13 @@ export default {
         suggest() {
             // this.searchSuggestion = [];
             let c = this.content
-            let dataUrl = `http://api.bing.com/qsonhs.aspx?type=cb&q=${c}&cb=window.bing.sug`
+            let dataUrl = `https://api.bing.com/qsonhs.aspx?type=cb&q=${c}&cb=window.bing.sug`
+            // let dataUrl = 'www.bing.com'
+            // fetch(`http://127.0.0.1:3000/proxy?url=${dataUrl}`)
+            //     .then(response => response.json())
+            //     .then((data) => {
+            //         console.log(data)
+            //     })
             window.bing = {
                 // 这里要用箭头函数, 否则this会指向window.bing
                 sug: (json) => {

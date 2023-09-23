@@ -3937,6 +3937,11 @@
   "resolved" "https://registry.npmmirror.com/slash/-/slash-3.0.0.tgz"
   "version" "3.0.0"
 
+"smooth-dnd@^0.12.1":
+  "integrity" "sha512-Dndj/MOG7VP83mvzfGCLGzV2HuK1lWachMtWl/Iuk6zV7noDycIBnflwaPuDzoaapEl3Pc4+ybJArkkx9sxPZg=="
+  "resolved" "https://registry.npmjs.org/smooth-dnd/-/smooth-dnd-0.12.1.tgz"
+  "version" "0.12.1"
+
 "sockjs@^0.3.24":
   "integrity" "sha512-GJgLTZ7vYb/JtPSSZ10hsOYIvEYsjbNU+zPdIHcUaWVNUEPivzxku31865sSSud0Da0W4lEeOPlmw93zLQchuQ=="
   "resolved" "https://registry.npmmirror.com/sockjs/-/sockjs-0.3.24.tgz"
@@ -4371,6 +4376,13 @@
     "@vue/runtime-dom" "3.3.4"
     "@vue/server-renderer" "3.3.4"
     "@vue/shared" "3.3.4"
+
+"vue3-smooth-dnd@^0.0.6":
+  "integrity" "sha512-CH9ZZhEfE7qU1ef2rlfgBG+nZtQX8PnWlspB2HDDz1uVGU7fXM0Pr65DftBMz4X81S+edw2H+ZFG6Dyb5J81KA=="
+  "resolved" "https://registry.npmjs.org/vue3-smooth-dnd/-/vue3-smooth-dnd-0.0.6.tgz"
+  "version" "0.0.6"
+  dependencies:
+    "smooth-dnd" "^0.12.1"
 
 "vuex@^4.0.0":
   "integrity" "sha512-hmV6UerDrPcgbSy9ORAtNXDr9M4wlNP4pEFKye4ujJF8oqgFFuxDCdOLS3eNoRTtq5O3hoBDh9Doj1bQMYHRbQ=="

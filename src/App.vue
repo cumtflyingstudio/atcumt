@@ -1,5 +1,5 @@
 <template>
-  <div class="navi">
+  <!-- <div class="navi">
     <div class="video">
       <video src="@/assets/wallpaper.mp4" muted loop autoplay></video>
     </div>
@@ -7,7 +7,8 @@
     <Search></Search>
     <TagsBox></TagsBox>
     <UserBox></UserBox>
-  </div>
+  </div> -->
+  <RouterView />
 </template>
 
 <script>

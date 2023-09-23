@@ -10,8 +10,15 @@ module.exports = {
                 pathRewrite: {    //3
                     '^/api': ''
                 }
-            }
-        }
+            },
+            '/hello': {
+                target: 'http://127.0.0.1:3000',    //2
+                changOrigin: true,
+                pathRewrite: {    //3
+                    '^/api': ''
+                }
+            },
+        },
     },
     chainWebpack: config => {
         // 添加处理 .ico 文件的 loader

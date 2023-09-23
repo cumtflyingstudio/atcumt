@@ -1,14 +1,14 @@
 <template>
-    <div class="tagsBox">
-        <div v-for="tag in tags" class="tagBox" @click="openTag(tag)">
+    <Container class="tagsBox" @drop="onDrop" :get-ghost-parent="getGhostParent" :remove-on-drop-out="true"
+        @drop-ready="onDropReady">
+        <Draggable v-for="tag in tags" class="tagBox" @click="openTag(tag)">
             <div class="ico" @contextmenu.prevent.stop="rightClick(tag)">
                 <img :src=tag.icon class="tagIcon">
             </div>
             <div class="tagName">
                 {{ tag.name }}
             </div>
-
-        </div>
+        </Draggable>
         <div class="tagBox">
             <div class="ico">
                 <div class="tagIcon" id="addTag" @click="showModal"></div>
@@ -17,7 +17,7 @@
                 添加标签
             </div>
         </div>
-    </div>
+    </Container>
     <div>
         <a-modal v-model:open="open" title="添加标签" @ok="handleOk">
             <a-space direction="vertical" class="add">
@@ -31,6 +31,8 @@
 
 <script>
 import Kxz from '@/assets/ico/kxz.png'
+import { Container, Draggable } from "vue3-smooth-dnd";
+import { applyDrag, generateItems } from "@/utils/helpers";
 export default ({
     data() {
         return {
@@ -39,6 +41,10 @@ export default ({
             open: false,
             tags: []
         }
+    },
+    components: {
+        Container,
+        Draggable
     },
     mounted() {
         this.tags = this.$store.state.tagList
@@ -71,6 +77,15 @@ export default ({
             console.log(tag)
             this.tags = this.tags.filter(item => item !== tag);
             this.$store.commit('updateTagList', this.tags)
+        },
+        onDrop(dropResult) {
+            this.tags = applyDrag(this.tags, dropResult)
+        },
+        getGhostParent() {
+            return document.body;
+        },
+        onDropReady(dropResult) {
+            console.log('drop ready', dropResult);
         }
     }
 })
