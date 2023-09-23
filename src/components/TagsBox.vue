@@ -82,8 +82,7 @@ export default ({
     <div>
       <GridLayout
         v-model:layout="layout" :col-num="12" :row-height="30" :is-draggable="true" :is-resizable="true"
-        :is-mirrored="false" :vertical-compact="true" :margin="[10, 10]" :use-css-transforms="true"
-        class="tagsBox"
+        :is-mirrored="false" :vertical-compact="true" :margin="[10, 10]" :use-css-transforms="true" class="tagsBox"
       >
         <GridItem
           v-for="item in layout" :key="item.i" :x="item.x" :y="item.y" :w="item.w" :h="item.h" :i="item.i"
