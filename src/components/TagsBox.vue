@@ -79,10 +79,11 @@ export default ({
 
 <template>
   <div>
-    <div class="tagsBox">
+    <div>
       <GridLayout
         v-model:layout="layout" :col-num="12" :row-height="30" :is-draggable="true" :is-resizable="true"
         :is-mirrored="false" :vertical-compact="true" :margin="[10, 10]" :use-css-transforms="true"
+        class="tagsBox"
       >
         <GridItem
           v-for="item in layout" :key="item.i" :x="item.x" :y="item.y" :w="item.w" :h="item.h" :i="item.i"
@@ -97,21 +98,21 @@ export default ({
         </GridItem>
       </GridLayout>
       <!-- <div v-for="tag in tags" class="tagBox" @click="openTag(tag)">
-                <div class="ico" @contextmenu.prevent.stop="rightClick(tag)">
-                    <img :src=tag.icon class="tagIcon">
-                </div>
-                <div class="tagName">
-                    {{ tag.name }}
-                </div>
-            </div>
-            <div class="tagBox">
-                <div class="ico">
-                    <div class="tagIcon" id="addTag" @click="showModal"></div>
-                </div>
-                <div class="tagName">
-                    添加标签
-                </div>
-            </div> -->
+              <div class="ico" @contextmenu.prevent.stop="rightClick(tag)">
+                  <img :src=tag.icon class="tagIcon">
+              </div>
+              <div class="tagName">
+                  {{ tag.name }}
+              </div>
+          </div>
+          <div class="tagBox">
+              <div class="ico">
+                  <div class="tagIcon" id="addTag" @click="showModal"></div>
+              </div>
+              <div class="tagName">
+                  添加标签
+              </div>
+          </div> -->
     </div>
   </div>
   <div>

@@ -192,13 +192,11 @@ body {
 .tagsBox {
     margin-top: 130px;
     /* background-color: #2f2f2f; */
-    width: 70vw;
+    width: 100vw;
     height: 35vh;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(2, 1fr);
     border-radius: 25px;
     caret-color: transparent;
+    
 }
 
 @media (max-width: 1200px) {
@@ -231,6 +229,7 @@ body {
 .tagBox {
 
     /* background-color: #212129;  */
+    
     border-radius: 5px;
     margin: 20px;
     display: flex;
@@ -240,7 +239,7 @@ body {
 }
 
 #mySvg {
-    background: url('@/assets/svg/search.svg');
+    /* background: url("@/assets/svg/search.svg"); */
     background-repeat: none !important;
     background-size: contain;
     margin: 0 10px 0 5px;
@@ -258,7 +257,7 @@ body {
     width: 80px;
     height: 50px;
     background-repeat: no-repeat;
-    background: url('@/assets/ico/cumt.ico');
+    /* background: url("@/assets/ico/cumt.ico");*/
     background-size: contain;
     margin-bottom: 5px;
     display: flex;
@@ -440,4 +439,12 @@ body {
     -webkit-transition: 0.3s background-color;
     transition: 0.3s background-color;
     /* display: none; */
+}
+
+.itemBox {
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
 }
