@@ -17,7 +17,8 @@
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
     "vue3-smooth-dnd": "^0.0.6",
-    "vuex": "^4.0.0"
+    "vuex": "^4.0.0",
+    "vue-grid-layout": "^2.4.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.43.0",

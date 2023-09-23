@@ -1,24 +1,28 @@
 <script>
-export default ({
+import Search from '@/components/Search.vue'
+import TimeBox from '@/components/TimeBox.vue'
+import TagsBox from '@/components/TagsBox.vue'
+import UserBox from '@/components/UserBox.vue'
 
-  // components: {
-  //   TagsBox,
-  //   Search,
-  //   TimeBox,
-  //   UserBox,
-  // },
+export default ({
+  components: {
+    TagsBox,
+    Search,
+    TimeBox,
+    UserBox,
+  },
 })
 </script>
 
 <template>
-  <!-- <div class="navi">
+  <div class="navi">
     <div class="video">
-      <video src="@/assets/wallpaper.mp4" muted loop autoplay></video>
+      <video src="@/assets/wallpaper.mp4" muted loop autoplay />
     </div>
-    <TimeBox></TimeBox>
-    <Search></Search>
-    <TagsBox></TagsBox>
-    <UserBox></UserBox>
-  </div> -->
-  <RouterView />
+    <TimeBox />
+    <Search />
+    <TagsBox />
+    <UserBox />
+  </div>
+  <!-- <RouterView /> -->
 </template>
