@@ -1,3 +1,15 @@
+<script>
+export default ({
+
+  // components: {
+  //   TagsBox,
+  //   Search,
+  //   TimeBox,
+  //   UserBox,
+  // },
+})
+</script>
+
 <template>
   <!-- <div class="navi">
     <div class="video">
@@ -10,19 +22,3 @@
   </div> -->
   <RouterView />
 </template>
-
-<script>
-import Search from '@/components/Search.vue'
-import TimeBox from '@/components/TimeBox.vue'
-import TagsBox from '@/components/TagsBox.vue'
-import UserBox from '@/components/UserBox.vue'
-export default ({
-
-  components: {
-    TagsBox,
-    Search,
-    TimeBox,
-    UserBox,
-  }
-})
-</script>
