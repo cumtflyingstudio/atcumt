@@ -69,13 +69,11 @@ const store = createStore({
   }
 })
 store.subscribe((mutation, state) => {
-  console.log("111")
   localStorage.setItem('vuex-state', JSON.stringify(state))
 })
 
 const savedState = JSON.parse(localStorage.getItem('vuex-state'))
 if (savedState) {
   store.replaceState(savedState)
-  console.log("!!!")
 }
 export default store //  监听数据变化重新设置本地存储

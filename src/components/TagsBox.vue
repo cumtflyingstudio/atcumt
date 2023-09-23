@@ -21,8 +21,8 @@
     <div>
         <a-modal v-model:open="open" title="添加标签" @ok="handleOk">
             <a-space direction="vertical" class="add">
-                <a-input v-model:value="name" placeholder="名称" />
-                <a-input v-model:value="url" placeholder="请输入正确的url(域名)" />
+                <a-input v-model:value="name" placeholder="标签名称" />
+                <a-input v-model:value="url" placeholder="请输入正确的url(域名)无需添加http" />
             </a-space>
             <div class="selectIcon"></div>
         </a-modal>

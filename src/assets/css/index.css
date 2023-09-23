@@ -348,18 +348,56 @@ body {
 }
 
 .ant-modal-content {
-    height: 55vh;
+    height: 61vh;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    min-width: 400px;
 }
 
 .ant-modal-body {
-    margin-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 62%;
 }
 
 .login .ant-input {
-    width: 304px;
+    width: 320px;
+}
+
+.ant-space-vertical {
+    display: flex;
+    margin-top: 35px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ant-modal-footer {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.ant-modal .ant-modal-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.newAdmin {
+    margin-top: 65px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .loginTip {
@@ -375,6 +413,13 @@ body {
 
 .selectIcon {
     margin-bottom: 45px;
+}
+
+.newAdmin div {
+    font-size: 12px;
+    caret-color: transparent;
+    cursor: pointer;
+
 }
 
 ::-webkit-scrollbar {
