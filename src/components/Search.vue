@@ -1,4 +1,5 @@
 <script>
+import { nextTick } from 'vue'
 import Bing from '@/assets/ico/bing.ico'
 import Baidu from '@/assets/ico/baidu.ico'
 import Google from '@/assets/ico/google.ico'
@@ -39,6 +40,48 @@ export default {
       showSugs: false,
     }
   },
+  created() {
+    nextTick().then(() => {
+      // 在下一个 tick 中执行操作
+      const searchInput = document.querySelector('.searchInput')
+      const searchBox = document.querySelector('.searchBox')
+
+      this.$store.watch(
+        state => state.searchBoxSize,
+        (newValue) => {
+          searchBox.style.height = `${newValue}px`
+        },
+      )
+      this.$store.watch(
+        state => state.searchBoxOpacity,
+        (newValue) => {
+          searchBox.style.opacity = newValue / 100
+        },
+      )
+      this.$store.watch(
+        state => state.searchBoxRadius,
+        (newValue) => {
+          searchInput.style.borderRadius = `${newValue}px`
+          searchBox.style.borderRadius = `${newValue}px`
+        },
+      )
+    })
+  },
+  mounted() {
+    nextTick().then(() => {
+      // 在下一个 tick 中执行操作
+      const lsState = JSON.parse(localStorage.getItem('vuex-state'))
+      const searchInput = document.querySelector('.searchInput')
+      const searchBox = document.querySelector('.searchBox')
+      const searchBoxSize = lsState.searchBoxSize
+      const searchBoxRadius = lsState.searchBoxRadius
+      const searchBoxOpacity = lsState.searchBoxOpacity / 100
+      searchInput.style.borderRadius = `${searchBoxRadius}px`
+      searchBox.style.borderRadius = `${searchBoxRadius}px`
+      searchBox.style.opacity = `${searchBoxOpacity}`
+      searchBox.style.height = `${searchBoxSize}px`
+    })
+  },
   methods: {
     searchContent() {
       const bing = 'https://cn.bing.com/search?q='
@@ -65,15 +108,8 @@ export default {
       this.searchSuggestion = []
     },
     suggest() {
-      // this.searchSuggestion = [];
       const c = this.content
       const dataUrl = `https://api.bing.com/qsonhs.aspx?type=cb&q=${c}&cb=window.bing.sug`
-      // let dataUrl = 'www.bing.com'
-      // fetch(`http://127.0.0.1:3000/proxy?url=${dataUrl}`)
-      //     .then(response => response.json())
-      //     .then((data) => {
-      //         console.log(data)
-      //     })
       window.bing = {
         // 这里要用箭头函数, 否则this会指向window.bing
         sug: (json) => {
@@ -100,7 +136,7 @@ export default {
       sBox.style.opacity = 1
     },
     hidSug() {
-      const sugsBox = document.getElementsByClassName('suggestionsBox')[0]
+      // const sugsBox = document.getElementsByClassName('suggestionsBox')[0]
       const sBox = document.getElementsByClassName('searchBox')[0]
       sBox.style.opacity = 0.7
     },

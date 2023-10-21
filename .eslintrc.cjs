@@ -3,5 +3,6 @@ module.exports = {
   rules: {
     'vue/eqeqeq': 'warn',
     'no-console': ['error', { allow: ['warn', 'error', 'debug'] }],
+    'vue/v-on-event-hyphenation': 'off',
   },
 }
