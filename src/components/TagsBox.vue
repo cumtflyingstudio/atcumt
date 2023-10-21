@@ -85,8 +85,7 @@ export default ({
     showModal() {
       this.open = true
     },
-    handleOk(e) {
-      console.debug(e)
+    handleOk() {
       if (this.url === '')
         return
       const newTag = {}

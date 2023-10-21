@@ -34,14 +34,10 @@ export default ({
         body.style.backgroundImage = `url(${back.src})`
         video.src = back.link
       }
-      // if (back.src !== null)
-      //   video.style.display = 'none'
-      // body.style.backgroundImage = `url(${back.src})`
     }
   },
   methods: {
     openMenu(e) {
-      console.debug(e)
       const w = window.screen.width
       const h = window.screen.height
       const x = e.pageX
