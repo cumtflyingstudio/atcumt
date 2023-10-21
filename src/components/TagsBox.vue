@@ -5,7 +5,6 @@ import { nextTick } from 'vue'
 import Kxz from '@/assets/ico/kxz.png'
 
 // 123545678
-
 export default ({
   components: {
     GridLayout,
