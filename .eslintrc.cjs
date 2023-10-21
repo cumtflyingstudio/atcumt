@@ -5,4 +5,5 @@ module.exports = {
     'no-console': ['error', { allow: ['warn', 'error', 'debug'] }],
     'vue/v-on-event-hyphenation': 'off',
   },
+  ignorePatterns: ['node_modules/', 'dist/', 'browserPlugin/'],
 }

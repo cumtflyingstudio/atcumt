@@ -1,7 +1,7 @@
 <script>
 import { nextTick } from 'vue'
 
-// import Avatar from '@/assets/ico/Avatar.png'
+import Kxz from '@/assets/ico/kxz.png'
 
 export default {
   data() {
@@ -21,7 +21,7 @@ export default {
       bgPicList: [],
       activeKey: 1,
       imgUrl: [],
-      newTabIconIndex: 0,
+      newTabIconIndex: -1,
       tagRadius: this.$store.state.tagRadius,
       tagOpacity: this.$store.state.tagRadius,
       searchBoxSize: this.$store.state.searchBoxSize,
@@ -215,9 +215,12 @@ export default {
       newTag.url = `https://${this.newTabUrl}`
       newTag.name = this.newTabName
       newTag.key = 0
-      newTag.icon = this.imgUrl[this.newTabIconIndex]
+      if (this.newTabIconIndex === -1)
+        newTag.icon = Kxz
+      else
+        newTag.icon = this.imgUrl[this.newTabIconIndex]
       this.imgUrl = []
-      this.newTabIconIndex = 0
+      this.newTabIconIndex = -1
       const tags = this.$store.state.tagList
       let x = 2
       let y = 0
