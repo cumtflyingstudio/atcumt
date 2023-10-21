@@ -3,8 +3,6 @@ import { GridItem, GridLayout } from 'vue3-drr-grid-layout'
 import 'vue3-drr-grid-layout/dist/style.css'
 import { nextTick } from 'vue'
 
-import Kxz from '@/assets/ico/kxz.png'
-
 export default ({
   components: {
     GridLayout,
@@ -66,11 +64,11 @@ export default ({
       localStorage.setItem('vuex-state', JSON.stringify(this.$store.state))
       this.layout = JSON.parse(localStorage.getItem('vuex-state')).tagList
     }
-    const tagRadius = lsState.tagRadius
-    const tagOpacity = lsState.tagOpacity / 100
     nextTick().then(() => {
       // 在下一个 tick 中执行操作
       const tagIcons = document.querySelectorAll('.tagIcon')
+      const tagRadius = lsState.tagRadius
+      const tagOpacity = lsState.tagOpacity / 100
       tagIcons.forEach((item) => {
         item.style.borderRadius = `${tagRadius}%`
         item.style.opacity = `${tagOpacity}`
@@ -84,21 +82,6 @@ export default ({
     },
     showModal() {
       this.open = true
-    },
-    handleOk() {
-      if (this.url === '')
-        return
-      const newTag = {}
-      newTag.url = `https://${this.url}`
-      newTag.name = this.name
-      newTag.key = 0
-      newTag.icon = Kxz
-      this.url = ''
-      this.name = ''
-      // this.tags.push(newTag)
-      this.tags.push(newTag)
-      this.$store.commit('updateTagList', this.tags)
-      this.open = false
     },
     rightClick(tag) {
       console.debug(tag)
