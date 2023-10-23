@@ -2,9 +2,9 @@
 import { GridItem, GridLayout } from 'vue3-drr-grid-layout'
 import 'vue3-drr-grid-layout/dist/style.css'
 import { nextTick } from 'vue'
-
 import Kxz from '@/assets/ico/kxz.png'
 
+// 123545678
 export default ({
   components: {
     GridLayout,
