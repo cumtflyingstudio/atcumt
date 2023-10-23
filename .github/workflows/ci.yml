@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  Build__Lint__Test__Typecheck:
+    if: ${{ !startsWith(github.head_ref, 'changeset') && !startsWith(github.head_ref, 'release') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
+
+      - name: Set node
+        uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8 # v3
+        with:
+          node-version: 16.x
+
+      - name: Setup
+        run: npm i -g @antfu/ni
+
+      - name: Install
+        run: nci
+
+      - name: Build
+        run: nr build
+
+      # - name: Test
+      #   run: nr test
+
+      - name: Lint
+        run: nr lint
+
+      # - name: Typecheck
+      #   run: nr typecheck

@@ -1,7 +1,5 @@
 <script>
 import { nextTick } from 'vue'
-import { eventType } from 'ant-design-vue/es/_util/type'
-import Kxz from '@/assets/ico/kxz.png'
 
 // import Avatar from '@/assets/ico/Avatar.png'
 
